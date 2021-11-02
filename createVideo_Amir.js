@@ -725,8 +725,6 @@ async function textChecking() {
     headers: {
       "Content-Type": "text/json",
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Max-Age': '3600'
     },
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
