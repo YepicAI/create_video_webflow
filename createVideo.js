@@ -726,7 +726,7 @@ async function textChecking() {
       "Content-Type": "text/json",
     },
     success: function (data) {
-     if(data.sexual >= 10 && data.mature >= 10 && data.offensive >= 10){
+     if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
        alert("Abusive text detected, please check.");
      }
     },
@@ -772,7 +772,7 @@ async function imageChecking() {
       "Content-Type": "text/json",
     },
     success: function (data) {
-      if(data.adult >= 10 && data.racy >= 10 && data.average >= 10){
+      if(data.adult >= 0.1 && data.racy >= 0.1 && data.average >= 0.1){
         alert("Abusive text detected, please check.");
       }
     },
