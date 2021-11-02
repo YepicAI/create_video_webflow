@@ -722,6 +722,7 @@ async function textChecking() {
     type: "POST",
     data: text,
     processData: false,
+    crossDomain: true,
     headers: {
       "Content-Type": "text/json",
       'Access-Control-Allow-Origin': '*',
