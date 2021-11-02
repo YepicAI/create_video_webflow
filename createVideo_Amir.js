@@ -732,9 +732,11 @@ async function textChecking() {
        alert("Abusive text detected, please check.");
      }
     },
-    error: function () {
-      alert("Something went wrong, try again!");
-    },
+  
+    error: function(xhr, status, error) {
+      var err = eval("(" + xhr.responseText + ")");
+      alert(err.Message);
+},
   });
 }
 
