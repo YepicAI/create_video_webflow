@@ -722,21 +722,17 @@ async function textChecking() {
     type: "POST",
     data: text,
     processData: false,
-    crossDomain: true,
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      'Access-Control-Allow-Origin': '*',
+      "Content-Type": "text/json",
     },
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
        alert("Abusive text detected, please check.");
      }
     },
-  
-    error: function(xhr, status, error) {
-      var err = eval("(" + xhr.responseText + ")");
-      alert(err.Message);
-},
+    error: function () {
+      alert("Something went wrong, try again!");
+    },
   });
 }
 
