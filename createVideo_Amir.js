@@ -721,7 +721,7 @@ async function textChecking() {
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/text",
     type: "POST",
-    data: text,
+    data: JSON.stringify({text: text}),
     processData: false,
     headers: {
       "Content-Type": "application/json",
