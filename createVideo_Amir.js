@@ -712,6 +712,7 @@ async function checkForAbuse() {
 }
 
 //Aamir Integration started
+var token="575CDCE36ABB516771A658B055A61BAF657E1B8E";
 $("#previewPlayBtn").click(function(){
   textChecking();
 });
@@ -724,9 +725,8 @@ async function textChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authentication": "Bearer 575CDCE36ABB516771A658B055A61BAF657E1B8E"
+      "Authorization": "Bearer"+token,
     },
-    // Authorization
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
        alert("Abusive text detected, please check.");
@@ -751,7 +751,7 @@ async function emailChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authentication": "Bearer 575CDCE36ABB516771A658B055A61BAF657E1B8E"
+      "Authorization": "Bearer"+token,
     },
     success: function (data) {
      if(data.is_disposable_email == true){
@@ -773,7 +773,7 @@ async function imageChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authentication": "Bearer 575CDCE36ABB516771A658B055A61BAF657E1B8E"
+      "Authorization": "Bearer"+token,
     },
     success: function (data) {
       if(data.adult >= 0.1 && data.racy >= 0.1 && data.average >= 0.1){
