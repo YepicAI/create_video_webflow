@@ -725,7 +725,7 @@ async function textChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer"+token,
+      "Authorization": 'Bearer '+token,
     },
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
@@ -751,7 +751,7 @@ async function emailChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer"+token,
+      "Authorization": 'Bearer '+token,
     },
     success: function (data) {
      if(data.is_disposable_email == true){
@@ -773,7 +773,7 @@ async function imageChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer"+token,
+      "Authorization": 'Bearer '+token,
     },
     success: function (data) {
       if(data.adult >= 0.1 && data.racy >= 0.1 && data.average >= 0.1){
