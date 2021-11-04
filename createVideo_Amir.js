@@ -724,6 +724,7 @@ async function textChecking() {
     processData: false,
     headers: {
       "Content-Type": "text/json",
+      "Authorization": "575CDCE36ABB516771A658B055A61BAF657E1B8E"
     },
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
@@ -749,6 +750,7 @@ async function emailChecking() {
     processData: false,
     headers: {
       "Content-Type": "text/json",
+      "Authorization": "575CDCE36ABB516771A658B055A61BAF657E1B8E"
     },
     success: function (data) {
      if(data.is_disposable_email == true){
@@ -770,6 +772,7 @@ async function imageChecking() {
     processData: false,
     headers: {
       "Content-Type": "text/json",
+      "Authorization": "575CDCE36ABB516771A658B055A61BAF657E1B8E"
     },
     success: function (data) {
       if(data.adult >= 0.1 && data.racy >= 0.1 && data.average >= 0.1){
