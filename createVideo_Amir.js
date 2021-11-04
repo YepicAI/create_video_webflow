@@ -725,7 +725,7 @@ async function textChecking() {
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": 'Bearer '+token,
+      "Authorization": $`Bearer ${token}` ,
     },
     success: function (data) {
      if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
