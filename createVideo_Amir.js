@@ -747,11 +747,11 @@ async function emailChecking() {
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/email",
     type: "POST",
-    data: email,
+    data: JSON.stringify({text: email}),
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": 'Bearer '+token,
+      "token": "575CDCE36ABB516771A658B055A61BAF657E1B8E",
     },
     success: function (data) {
      if(data.is_disposable_email == true){
@@ -769,11 +769,11 @@ async function imageChecking() {
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/image",
     type: "POST",
-    data: email,
+    data:  JSON.stringify({url: email}),
     processData: false,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": 'Bearer '+token,
+      "token": "575CDCE36ABB516771A658B055A61BAF657E1B8E",
     },
     success: function (data) {
       if(data.adult >= 0.1 && data.racy >= 0.1 && data.average >= 0.1){
