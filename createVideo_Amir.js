@@ -742,7 +742,6 @@ async function textChecking() {
 document.getElementById("Email-3").addEventListener("focusout", emailChecking);
 
 async function emailChecking() {
-  debugger
   var email =$("#Email-3").val();
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/email",
@@ -765,7 +764,8 @@ async function emailChecking() {
 }
 
 async function imageChecking() {
-  var email =$("#video-script").val();
+  debugger
+  var email =$("#uploadedImg").val();
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/image",
     type: "POST",
