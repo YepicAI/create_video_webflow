@@ -738,12 +738,12 @@ async function textChecking() {
   });
 }
 
-$("#Email-3").focusout(function(){
-  emailChecking();
-});
+
+document.getElementById("Email-3").addEventListener("focusout", emailChecking);
 
 async function emailChecking() {
-  var email =$("#video-script").val();
+  debugger
+  var email =$("#Email-3").val();
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/email",
     type: "POST",
