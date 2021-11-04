@@ -162,6 +162,7 @@ function send_request() {
   fV.videoName = $("#video-name").val();
   fV.size = $("#size").val();
   textChecking();
+  imageChecking();
   if (fV.videoName.length < 1) {
     formErrors = true;
     $(".form-name-wrap").css(redBorderCss);
@@ -715,6 +716,7 @@ async function checkForAbuse() {
 var token="575CDCE36ABB516771A658B055A61BAF657E1B8E";
 $("#previewPlayBtn").click(function(){
   textChecking();
+  imageChecking();
 });
 async function textChecking() {
   var text =$("#video-script").val();
