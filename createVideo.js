@@ -706,7 +706,7 @@ async function checkForAbuse() {
       "token": "575CDCE36ABB516771A658B055A61BAF657E1B8E",
     },
     success: function (data) {
-     if(data.sexual < 0.1 && data.mature < 0.1 && data.offensive < 0.1){
+     if(data.sexual < 0.25 && data.mature < 0.25 && data.offensive < 0.25){
       scriptApproved = true;
       playPreview();     }
     },
