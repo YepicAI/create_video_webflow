@@ -695,7 +695,8 @@ $("#deleteBackground").on("click", function () {
 });
 
 async function checkForAbuse() {
-  var text =$("#video-script").val();
+  var text = fV.script;
+  //$("#video-script").val();
   $.ajax({
     url:"https://moderator-2xzgrl4rma-uc.a.run.app/text",
     type: "POST",
