@@ -695,17 +695,42 @@ $("#deleteBackground").on("click", function () {
 });
 
 async function checkForAbuse() {
-  $.get({
-    url:
-      "https://us-central1-speech2vid-api.cloudfunctions.net/checkForAbuse?content=" +
-      fV.script,
-
-    success: function (approval) {
-      scriptApproved = approval;
-      playPreview();
+  var text =$("#video-script").val();
+  $.ajax({
+    url:"https://moderator-2xzgrl4rma-uc.a.run.app/text",
+    type: "POST",
+    data: JSON.stringify({text: text}),
+    processData: false,
+    headers: {
+      "Content-Type": "application/json",
+      "token": "575CDCE36ABB516771A658B055A61BAF657E1B8E",
+    },
+    success: function (data) {
+     if(data.sexual >= 0.1 && data.mature >= 0.1 && data.offensive >= 0.1){
+      scriptApproved = true;
+      playPreview();     }
     },
     error: function () {
       alert("Something went wrong, try again!");
     },
   });
 }
+
+//async function checkForAbuse() {
+//  $.get({
+//    url:
+//      "https://us-central1-speech2vid-api.cloudfunctions.net/checkForAbuse?content=" +
+//      fV.script,
+
+//    success: function (approval) {
+//      scriptApproved = approval;
+//      playPreview();
+//    },
+//    error: function () {
+//      alert("Something went wrong, try again!");
+//    },
+//  });
+  
+}
+
+
