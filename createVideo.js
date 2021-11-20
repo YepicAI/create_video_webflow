@@ -529,7 +529,8 @@ async function uploadAudio() {
     },
     success: function (data) {
       fV.audioFilename = audioFileName;
-      fV.audioLink = data.mediaLink;
+      #fV.audioLink = data.mediaLink;
+      fv.audioLink = "gs://" + data.bucket + "/" + data.name
     },
     error: function () {
       alert("Something went wrong, try again!");
