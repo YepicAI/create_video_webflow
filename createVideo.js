@@ -651,7 +651,7 @@ async function checkForAbuse() {
     },
     success: function (data) {
       console.log(data)
-     if(data.sexual >= 0.1 || data.mature || 0.1 || data.offensive >= 0.1){
+     if(data.sexual >= 0.25 || data.mature || 0.25 || data.offensive >= 0.25){
        alert("Abusive text detected, please check.");
        scriptApproved = false
      }
