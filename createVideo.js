@@ -657,6 +657,7 @@ async function checkForAbuse() {
      }
      else{
        scriptApproved = true
+       playPreview(); 
      }
     },
     error: function () {
